@@ -39,4 +39,10 @@ impl Telnet {
     pub const MCCP2: u8 = 86; // MCCP2
     pub const MCCP3: u8 = 87; // MCCP3
     pub const MSDP: u8 = 69; // MSDP
+
+    pub fn from_u8(element: &[u8]) -> &'static str {
+        let value = "";
+
+        value
+    }
 }
