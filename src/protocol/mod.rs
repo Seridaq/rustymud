@@ -40,9 +40,39 @@ impl Telnet {
     pub const MCCP3: u8 = 87; // MCCP3
     pub const MSDP: u8 = 69; // MSDP
 
-    pub fn from_u8(element: &[u8]) -> &'static str {
-        let value = "";
-
-        value
+    pub fn from_u8(element: u8) -> String {
+        match element {
+            Self::SE => "SE ".to_string(),
+            Self::NOP => "NOP ".to_string(),
+            Self::DM => "DM ".to_string(),
+            Self::BRK => "BRK ".to_string(),
+            Self::IP => "IP ".to_string(),
+            Self::AO => "AO ".to_string(),
+            Self::AYT => "AYT ".to_string(),
+            Self::EC => "EC ".to_string(),
+            Self::EL => "EL ".to_string(),
+            Self::GA => "GA ".to_string(),
+            Self::SB => "SB ".to_string(),
+            Self::WILL => "WILL ".to_string(),
+            Self::WONT => "WON'T ".to_string(),
+            Self::DO => "DO ".to_string(),
+            Self::DONT => "DON'T ".to_string(),
+            Self::IAC => "IAC ".to_string(),
+            Self::BINARY => "BINARY ".to_string(),
+            Self::ECHO => "ECHO ".to_string(),
+            Self::SUPPRESS_GO_AHEAD => "SUPPRESS_GO_AHEAD ".to_string(),
+            Self::STATUS => "STATUS ".to_string(),
+            Self::TIMING_MARK => "TIMING_MARK ".to_string(),
+            Self::LINE_WIDTH => "LINE_WIDTH ".to_string(),
+            Self::PAGE_SIZE => "PAGE_SIZE ".to_string(),
+            Self::TERMINAL_TYPE => "TERMINAL_TYPE".to_string(),
+            Self::TERMINAL_SPEED => "TERMINAL_SPEED".to_string(),
+            Self::LINE_MODE => "LINE_MODE ".to_string(),
+            Self::GMCP => "GMCP ".to_string(),
+            Self::MCCP2 => "MCCP2 ".to_string(),
+            Self::MCCP3 => "MCCP3 ".to_string(),
+            Self::MSDP => "MSDP ".to_string(),
+            _ => format!("\'{:?}\' ", element),
+        }
     }
 }
